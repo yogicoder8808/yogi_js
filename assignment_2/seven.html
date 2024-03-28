@@ -1,0 +1,41 @@
+<!-- Write JavaScript code to handle form submission and display a message with the entered name and email on the webpage. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+
+    <p> Full Name:</p>
+    <input id="box1" >
+
+    <p>Email:</p>
+    <input id="box2">
+    <button onclick="resultfunction()">Submit</button>
+
+    <h2 id="Name">Name</h2>
+    <h2 id="Mail">Mail</h2>
+
+<script>
+    var box1=document.getElementById("box1")
+    var box2=document.getElementById("box2")
+    var result=document.getElementById("Name")
+    var result1=document.getElementById("Mail")
+
+        function resultfunction()
+            {
+                var box1value=box1.value
+                var box2value=box2.value
+                Name.textContent=" Name is: " + box1value
+                Mail.textContent=" Mail ID is: " + box2value
+                
+            }
+
+</script>
+    
+</body>
+</html>
+

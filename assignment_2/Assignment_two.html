@@ -1,0 +1,129 @@
+<!-- Create an HTML form with input fields for name and email. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_2</title>
+
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+        }
+        .toggle{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+            /* display :none; */
+        }
+        
+    </style>
+
+    </style>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td>Name:</td> <td><input type="text" placeholder="Enter Your Name"></td>
+            </tr>
+            <tr>
+                <td>Email ID:</td> <td><input type="text" placeholder="Enter Your Mail ID"></td>
+            </tr>
+            <tr>
+                 <td><input type="reset"></td>
+            </tr>
+        </table>
+
+    </form>
+
+
+<!-- Write JavaScript code to handle form submission and display a message with the entered name and email on the webpage. -->
+        <p> Full Name:</p>
+        <input id="box1" >
+
+        <p>Email:</p>
+        <input id="box2">
+        <button onclick="resultfunction()">Submit</button>
+
+        <h2 id="Name">Name</h2>
+        <h2 id="Mail">Mail</h2>
+
+<!-- Implement an event listener to change the background color of a div when it is clicked. -->
+        <br>
+        <center>
+        <div class="box">Change color</div>
+        </center>
+
+<!-- Create a list of items and add functionality to dynamically add new items to the list using JavaScript. -->
+        <input id="box" placeholder="Add List items">
+        <button onclick="add()">Add</button>
+        <ul id="list"></ul>
+
+<!-- Write code to toggle the visibility of an element when a button is clicked. -->
+        <br>
+        <center>
+        <button id="btn">click</button>
+        <div class="toggle">Element</div>
+        </center>
+
+    <script>
+        var box1=document.getElementById("box1")
+        var box2=document.getElementById("box2")
+        var result=document.getElementById("Name")
+        var result1=document.getElementById("Mail")
+    
+            function resultfunction()
+                {
+                    var box1value=box1.value
+                    var box2value=box2.value
+                    Name.textContent=" Name is: " + box1value
+                    Mail.textContent=" Mail ID is: " + box2value
+                    
+                }
+
+                var boxcolor = document.querySelector(".box")
+                boxcolor.addEventListener("click",function()
+                {
+                boxcolor.style.backgroundColor="yellow"
+                })
+
+                var box=document.getElementById("box")
+                var list=document.getElementById("list")
+                function add()
+                    {
+                    var listitem=document.createElement("li")
+                    listitem.textContent=box.value
+                    list.append(listitem)
+                    }
+
+                    var btn=document.getElementById("btn")
+                    var toggle=document.querySelector(".toggle")
+
+                        btn.addEventListener("click",function(){
+                            if(toggle.style.display=="none")
+                                {
+                                toggle.style.display="block"
+                                }
+                            else
+                                {
+                                toggle.style.display="none"
+                            } 
+        })
+
+    </script>
+
+</body>
+</html>
+
+
+

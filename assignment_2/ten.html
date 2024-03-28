@@ -1,0 +1,44 @@
+
+<!-- Write code to toggle the visibility of an element when a button is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toggle</title>
+    <style>
+        .toggle{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+            /* display :none; */
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <center>
+    <button id="btn">click</button>
+    <div class="toggle">Element</div>
+    </center>
+    <script>
+        var btn=document.getElementById("btn")
+        var toggle=document.querySelector(".toggle")
+
+        btn.addEventListener("click",function(){
+            if(toggle.style.display=="none")
+            {
+            toggle.style.display="block"
+            }
+           else
+           {
+            toggle.style.display="none"
+           } 
+        })
+
+    </script>
+    
+</body>
+</html>

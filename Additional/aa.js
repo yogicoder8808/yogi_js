@@ -1,0 +1,9 @@
+for(i=0;i<=10;i=i+2)
+console.log(i)
+if(i%2==0)
+{
+    console.log("Even")
+}else
+{
+    console.log("odd")
+}

@@ -1,0 +1,26 @@
+<!-- Create a list of items and add functionality to dynamically add new items to the list using JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List</title>
+</head>
+<body>
+    <input id="box" placeholder="Type here">
+    <button onclick="add()">Add</button>
+    <ul id="list"></ul>
+    
+
+    <script>
+        var box=document.getElementById("box")
+        var list=document.getElementById("list")
+        function add()
+        {
+            var listitem=document.createElement("li")
+            listitem.textContent=box.value
+            list.append(listitem)
+        }
+    </script>
+    
+</body>
+</html>

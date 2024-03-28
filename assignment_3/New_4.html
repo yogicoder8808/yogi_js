@@ -1,0 +1,45 @@
+<!-- Use Promises to handle multiple asynchronous operations and display the results once all operations are complete. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+    const student1 = new Promise((resolve,reject) => {
+        setTimeout(()=>resolve({name:"Arun", status: "Present"}),1000)
+    })
+    const student2 = new Promise((resolve,reject) => {
+        setTimeout(()=>resolve({name:"Bala", status: "Present"}),2000)
+    })
+    const student3 = new Promise((resolve,reject) => {
+        setTimeout(()=>resolve({name:"Hema", status: "Present"}),3000)
+    })
+
+    Promise.allSettled([student1,student2,student3])
+    
+    .then (results => {
+        results.forEach(result =>{
+            if (result.status=="fulfilled"){
+                const student = result.value;
+                console.log(`${student.name} : ${student.status}`)
+            }else {
+                console.log("Operation Failed")
+            }
+        })
+
+        console.log ("All student status are checked")
+    })
+
+    .catch(error =>{
+        console.log (error.message)
+    });
+
+
+
+    </script>
+</body>
+</html>

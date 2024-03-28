@@ -1,0 +1,37 @@
+<!-- Implement error handling for the Fetch request and display an error message if the request fails. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Error Handling</title>
+</head>
+<body>
+
+    <div id="results"></div>
+    <script>
+        fetch('https://jsonplaceholder.org/usersssss')
+        .then(response=>{
+            if(!response.ok){
+                throw new Error("User data not found")
+            }
+            return response.json()
+                
+        .then (data=>{
+            var result=document.getElementById("results")
+            result.textContent=JSON.stringify(data[0],null,2)
+            })
+
+        })
+
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById("results").innerHTML='<h1>Request Fails</h1>'
+         })
+
+
+
+    </script>
+</body>
+</html>

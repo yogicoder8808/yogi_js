@@ -1,0 +1,38 @@
+<!-- Implement an event listener to change the background color of a div when it is clicked. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Change color</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 200px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <br>
+    <center>
+    <div class="box">Change color</div>
+    </center>
+
+    <Script>
+        var boxcolor = document.querySelector(".box")
+        boxcolor.addEventListener("click",function(){
+
+            boxcolor.style.backgroundColor="yellow"
+        })
+        
+      
+
+    </Script>
+
+
+</body>
+</html>

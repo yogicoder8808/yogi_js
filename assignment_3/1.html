@@ -1,0 +1,33 @@
+<!-- Use the Fetch API to make an HTTP GET request to a JSON API and display the response data on the webpage. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API - HTTP GET request</title>
+</head>
+<body>
+    <h1>Details</h1>
+    <div id="results"></div>
+    <script>
+        fetch('https://jsonplaceholder.org/users')
+        .then(response=>{
+            if(!response.ok){
+                console.log("Invalid Request")
+            }
+            return response.json()
+                
+        .then (data=>{
+            var result=document.getElementById("results")
+            result.textContent=JSON.stringify(data,null,2)
+        })
+
+        })
+
+  .catch(error => {
+    console.error('Error:', error)
+  })
+    </script>
+</body>
+</html>

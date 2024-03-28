@@ -1,0 +1,36 @@
+<!-- Create an instance of the Car class and display its properties on the webpage. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disply the car properties</title>
+</head>
+<body>
+    <div id="carInfo"></div>
+    <script >
+
+class car {
+    constructor(make,model,year){
+        this.make=make
+        this.model=model
+        this.year=year
+    }
+
+
+calculateCarAge = ()=>{
+    const currentYear=new Date().getFullYear()
+    return currentYear-this.year
+}
+}
+
+const myNewCar= new car ('TATA','SUV','2022')
+    const carInfo=document.getElementById("carInfo")
+    carInfo.innerHTML = `<p>Make: ${myNewCar.make}</p>
+                         <p>Model: ${myNewCar.model}</p>
+                         <p>Year: ${myNewCar.year}</p>   
+                         <p>Make: ${myNewCar.calculateCarAge()}</p>`
+    </script>
+</body>
+</html>

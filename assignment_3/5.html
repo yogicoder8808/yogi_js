@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="Utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="registrationForm" onsubmit="return validateForm(event)">
+        <div>
+            <label for ="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <Span id="usernameError" style="color: red;"></Span>
+        </div>
+
+        <div>
+            <label for ="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        async function checkUsernameExists(username){
+    return new Promise ((resolve,reject) =>{
+        setTimeout(()=>{
+            const existingUsernames = ['Arun', 'Balu', 'Chiru']
+            if(existingUsernames.includes(username)){
+                reject('username already exists')
+            }else{
+                resolve()
+            }
+           
+        },1000)
+    })
+}
+
+async function validateForm(event){
+    event.preventDefault();
+    const usernameInput = document.getElementById('username')
+    const passwordInput = document.getElementById('password')
+    const usernameError = document.getElementById('usernameError')
+
+    const username = usernameInput.value
+
+    try{
+        await checkUsernameExists(username)
+        console.log('Form Submitted sucessfully')
+        usernameError.textContent = ''
+    }catch(error){
+        console.error(error)
+        usernameError.textContent = error
+    }
+}
+
+   
+</script>
+</body>
+</html>
